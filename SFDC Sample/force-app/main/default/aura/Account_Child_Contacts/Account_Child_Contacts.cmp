@@ -1,0 +1,20 @@
+<aura:component controller="Event_Example">
+        <!-- attributes -->
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="flag" type="boolean" default="false" />
+
+    <!-- handlers-->
+    <aura:handler event="c:Account_App_Event" action="{!c.callContacts }"/>
+
+	<aura:if isTrue="{!v.flag}">
+    <!-- the container element determine the height of the datatable -->
+    <div style="height: 300px">
+        <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    </div>	
+    </aura:if>
+</aura:component>

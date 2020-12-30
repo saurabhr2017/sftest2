@@ -1,0 +1,6 @@
+<aura:component controller="ShowLeadApex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+     <lightning:button label="Show Records" title="Show Records action" onclick="{! c.myAction }"/>
+  
+    
+    
+</aura:component>

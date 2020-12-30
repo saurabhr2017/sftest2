@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:attribute name="myName" type="String" />
+    <aura:handler event="c:App_Event_One" action="{!c.show}" />
+	{!v.myName}    
+</aura:component>

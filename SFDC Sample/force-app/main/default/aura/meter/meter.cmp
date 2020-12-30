@@ -1,0 +1,14 @@
+<aura:component>
+    <aura:attribute name="truthy" type="string" />
+    <aura:renderIf isTrue="{!v.truthy}">
+        <aura:iteration items="1,2,3,4,5" var="item">
+            <meter value="{!item / 5}"/><br/>
+        </aura:iteration>
+    <aura:set attribute="else">
+      False
+    </aura:set>
+  </aura:renderIf> 
+
+	 
+
+</aura:component>

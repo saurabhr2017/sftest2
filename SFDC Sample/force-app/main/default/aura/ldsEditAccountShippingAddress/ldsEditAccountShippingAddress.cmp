@@ -1,0 +1,50 @@
+<aura:component implements="force:appHostable,force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="record" 
+                    type="Object" 
+                    description="The record object to be displayed"/>
+    <aura:attribute name="simpleRecord" 
+                    type="Object"
+                    description="A simplified view record object to be displayed"/>
+    <aura:attribute name="recordError"
+                    type="String"
+                    description="An error message bound to force:recordData"/>
+    
+    <force:recordData aura:id="recordEditor"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      mode="EDIT"/>
+    
+    <!-- Display an editing form -->
+    <div class="Shipping Edit Form Details">
+        <lightning:card iconName="action:edit" title="{!v.simpleRecord.Name}">
+            <div class="slds-p-horizontal--small">
+                <lightning:input label="Shipping Street" 
+                                 value="{!v.simpleRecord.ShippingStreet}"/>
+                <br/>
+                <lightning:input label="Shipping City" 
+                                 value="{!v.simpleRecord.ShippingCity}"/>
+                <br/>
+                <lightning:input label="Shipping State" 
+                                 value="{!v.simpleRecord.ShippingState}"/>
+                <br/>
+                <lightning:input label="Shipping Country" 
+                                 value="{!v.simpleRecord.ShippingCountry}"/>
+                <br/>
+                <lightning:button label="Save" 
+                                  variant="brand" 
+                                  onclick="{!c.handleSaveRecord}"/>
+            </div>
+        </lightning:card>
+    </div>
+    
+    
+    <!-- Display Lightning Data Service errors, if any -->
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            {!v.recordError}
+        </div>
+    </aura:if>
+</aura:component>

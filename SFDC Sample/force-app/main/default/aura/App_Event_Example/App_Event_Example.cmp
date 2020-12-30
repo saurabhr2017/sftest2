@@ -1,0 +1,9 @@
+<aura:component >
+    
+    <aura:attribute name="message" type="String" />
+    <aura:handler event="c:App_Event_One" action="{!c.show}" />
+    <c:App_Event_Child_One />
+    <c:App_Event_Child_Two />
+    <c:App_Event_Child_Three />
+     
+</aura:component>

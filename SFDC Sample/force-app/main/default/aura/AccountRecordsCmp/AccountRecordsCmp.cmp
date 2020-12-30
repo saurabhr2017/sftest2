@@ -1,0 +1,7 @@
+<aura:component controller="AccountRecords" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:button label="Show Child Contacts" onClick="{!c.myAction}"/>
+
+    <Aura:attribute name="toCmpRecords" type="Account[]" />
+    
+</aura:component>
